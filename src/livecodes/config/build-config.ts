@@ -35,6 +35,9 @@ export const buildConfig = (appConfig: Partial<Config>) => {
     ...paramsConfig,
   };
 
+  parseLanguageContent(config)
+  console.log('config', config)
+
   const activeEditor = config.activeEditor || 'markup';
 
   config = fixLanguageNames({
@@ -44,6 +47,16 @@ export const buildConfig = (appConfig: Partial<Config>) => {
 
   return config;
 };
+
+const parseLanguageContent = (config: Config) => {
+  const language = getLanguageByAlias(config.language);
+  if (!language) return;
+  const editorId = getLanguageEditorId(language);
+  if (editorId) {
+    config[editorId] = { language, content: config.content }
+    config.activeEditor = editorId;
+  }
+}
 
 const fixLanguageNames = (config: Config): Config => ({
   ...config,

@@ -424,6 +424,10 @@ export interface ContentConfig {
    */
   description: string;
 
+  language: string,
+
+  content: string,
+
   /**
    * Content added to the [result page](https://livecodes.io/docs/features/result) `<head>` element.
    * @default '<meta charset="UTF-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
