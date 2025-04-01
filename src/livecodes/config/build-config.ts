@@ -36,7 +36,6 @@ export const buildConfig = (appConfig: Partial<Config>) => {
   };
 
   parseLanguageContent(config)
-  console.log('config', config)
 
   const activeEditor = config.activeEditor || 'markup';
 
