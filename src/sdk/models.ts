@@ -424,9 +424,9 @@ export interface ContentConfig {
    */
   description: string;
 
-  language: string,
+  language?: string,
 
-  content: string,
+  content?: string,
 
   /**
    * Content added to the [result page](https://livecodes.io/docs/features/result) `<head>` element.
